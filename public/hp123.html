@@ -72,7 +72,7 @@ document.getElementById("startBtn").addEventListener("click", async function () 
 
   // 🔥 SEND MODEL MAIL (FIRST MAIL)
   try {
-    await fetch("/api/send-contact", {
+    await fetch("/send-contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

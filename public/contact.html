@@ -36,7 +36,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
     printerModel: printerModel
   };
 
-  const res = await fetch("/send-contact", {
+  const res = await fetch("/api/send-contact", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload)

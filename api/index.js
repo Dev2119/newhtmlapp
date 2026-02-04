@@ -33,7 +33,7 @@ app.get("/contact", (req, res) => {
 });
 
 /* ---------------- MAIL 1: MODEL SUBMIT ---------------- */
-app.post("/api/send-model", async (req, res) => {
+app.post("/send-model", async (req, res) => {
   const { printerModel, brand } = req.body;
 
   if (!printerModel) {

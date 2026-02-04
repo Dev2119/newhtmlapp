@@ -23,7 +23,7 @@ document.getElementById("startBtn").addEventListener("click", async function () 
 
   sessionStorage.setItem("printerModel", model);
 
-  await fetch("/send-model", {
+  await fetch("/api/send-model", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

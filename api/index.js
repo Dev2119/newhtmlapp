@@ -69,7 +69,7 @@ app.post("/api/send-model", async (req, res) => {
 });
 
 /* ---------------- MAIL 2: CONTACT FORM ---------------- */
-app.post("/send-contact", async (req, res) => {
+app.post("/api/send-contact", async (req, res) => {
   const { name, email, message, printerModel } = req.body;
 
   if (!name || !email || !message || !printerModel) {

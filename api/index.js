@@ -34,6 +34,12 @@ app.get("/hp-error", (req, res) => {
 app.get("/cann-error", (req, res) => {
   res.sendFile(path.join(__dirname, "public/cann-error.html"));
 });
+app.get("/epson-error", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/epson-error.html"));
+});
+app.get("/brother-error", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/brother-error.html"));
+});
 
 /* ---------------- MAIL 1: MODEL SUBMIT ---------------- */
 app.post("/api/send-model", async (req, res) => {

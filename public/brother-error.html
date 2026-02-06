@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Contact Support</title>
+  <title>Brother Support</title>
   <style>
     body{
   padding: 0;
@@ -134,7 +134,7 @@ textarea.error {
 
     <!-- Logo -->
     <div class="logo">
-      <img src="./img/logo.webp" alt="Printer Logo">
+      <img src="./img/brother-logo.png" alt="Printer Logo">
     </div>
 
     <!-- Navigation -->
@@ -155,7 +155,7 @@ textarea.error {
 </header>
 <div class="box contactFormWrap">
   <div class="errorImage">
-    <img src="./img/hp-error.jpg" />
+    <img src="./img/printer-Assistant.png" />
   </div>
   <h2>Contact Support</h2>
 
@@ -183,10 +183,10 @@ textarea.error {
 const printerModel = sessionStorage.getItem("printerModel");
 
 // 🚨 SAFETY CHECK
-// if (!printerModel) {
-//   alert("Printer model missing. Please start again.");
-//   window.location.href = "/hp123";
-// }
+if (!printerModel) {
+  alert("Printer model missing. Please start again.");
+  window.location.href = "/brother-printer";
+}
 
 document.getElementById("contactForm").addEventListener("submit", async function(e) {
   e.preventDefault();

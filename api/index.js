@@ -12,8 +12,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 /* ---------------- STATIC ROUTES ---------------- */
-app.get("/printer-model", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/printer-model.html"));
+app.get("/canon-printer", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/canon-printer.html"));
 });
 
 app.get("/hp123", (req, res) => {
@@ -28,8 +28,11 @@ app.get("/brother-printer", (req, res) => {
   res.sendFile(path.join(__dirname, "public/brother-printer.html"));
 });
 
-app.get("/contact", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/contact.html"));
+app.get("/hp-error", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/hp-error.html"));
+});
+app.get("/cann-error", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/cann-error.html"));
 });
 
 /* ---------------- MAIL 1: MODEL SUBMIT ---------------- */
@@ -70,9 +73,9 @@ app.post("/api/send-model", async (req, res) => {
 
 /* ---------------- MAIL 2: CONTACT FORM ---------------- */
 app.post("/api/send-contact", async (req, res) => {
-  const { name, email, message, printerModel } = req.body;
+  const { name,phone, email, message, printerModel } = req.body;
 
-  if (!name || !email || !message || !printerModel) {
+  if (!name || !phone || !email || !message || !printerModel) {
     return res.status(400).json({ success: false });
   }
 
@@ -93,6 +96,7 @@ app.post("/api/send-contact", async (req, res) => {
         <h3>New Support Request</h3>
         <p><b>Printer Model:</b> ${printerModel}</p>
         <p><b>Name:</b> ${name}</p>
+        <p><b>Phone:</b> ${phone}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Message:</b> ${message}</p>
       `

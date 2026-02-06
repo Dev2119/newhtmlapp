@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Support</title>
+  <style>
+    body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+.contactFormWrap {
+    text-align: center;
+    width: 600px;
+    margin: 67px auto;
+}
+.contactFormWrap form input, .contactFormWrap form textarea {
+    display: inline-block;
+    width: 96%;
+    padding: 10px 8px;
+    margin: 8px 0;
+    font-size: 16px;
+    font-weight: 400;
+    max-width: 100%;
+}
+.contactFormWrap form textarea{
+  min-height: 200px;
+}
+.contactFormWrap form {
+    background: #fff;
+    box-shadow: 0 0 9px #ccc;
+    border-radius: 9px;
+    padding: 40px;
+}
+.contactFormWrap form button {
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #fff;
+    cursor: pointer;
+    background: #2563eb;
+    border: 0;
+    border-radius: 10px;
+    margin-top: 16px;
+    padding: 11px 31px;
+    font-size: 18px;
+}
+.errorImage img{
+  width: 100%;
+}
+.header {
+    background: #dff1ff;
+    padding: 18px 30px;
+}
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo img {
+  height: 45px;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+.nav a:hover {
+  color: #0056ff;
+}
+
+/* Contact Button */
+.btn {
+  text-decoration: none;
+  padding: 10px 22px;
+  border: 2px solid #0056ff;
+  color: #0056ff;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #0056ff;
+  color: #fff;
+}
+.footer {
+  width: 100%;
+  background: #000;
+  padding: 18px 0;
+  text-align: center;
+}
+
+.footer p {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+.error-text {
+  display: block;
+  text-align: left;
+  color: #dc2626;
+  font-size: 14px;
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+input.error,
+textarea.error {
+  border: 1px solid #dc2626;
+}
+  </style>
+</head>
+<body>
+  <header class="header">
+  <div class="header-container">
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="./img/logo.webp" alt="Printer Logo">
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="#">OFFICEJET</a>
+      <a href="#">LASERJET</a>
+      <a href="#">PIXMA</a>
+      <a href="#">MAXIFY</a>
+      <a href="#">XP SERIES</a>
+    </nav>
+
+    <!-- CTA Button -->
+    <div class="cta">
+      <a href="#" class="btn">CONTACT US</a>
+    </div>
+
+  </div>
+</header>
+<div class="box contactFormWrap">
+  <div class="errorImage">
+    <img src="./img/hp-error.jpg" />
+  </div>
+  <h2>Contact Support</h2>
+
+  <!-- IMPORTANT: id MUST exist -->
+<form id="contactForm">
+  <input id="name" placeholder="Your Name">
+  <span class="error-text" id="nameError"></span>
+
+  <input id="phone" placeholder="Your Phone">
+  <!-- <span class="error-text" id="phoneError"></span> -->
+
+  <input id="email" type="email" placeholder="Your Email">
+  <span class="error-text" id="emailError"></span>
+
+  <textarea id="message" placeholder="Describe your issue"></textarea>
+  <!-- <span class="error-text" id="messageError"></span> -->
+
+  <button type="submit">Send</button>
+</form>
+</div>
+<footer class="footer">
+  <p>Copyright © 2026 by Official Printer Support</p>
+</footer>
+<script>
+const printerModel = sessionStorage.getItem("printerModel");
+
+// 🚨 SAFETY CHECK
+if (!printerModel) {
+  alert("Printer model missing. Please start again.");
+  window.location.href = "/hp123";
+}
+
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  // Clear previous errors
+  document.querySelectorAll(".error-text").forEach(el => el.textContent = "");
+  document.querySelectorAll("input, textarea").forEach(el => el.classList.remove("error"));
+
+  let isValid = true;
+
+  const name = document.getElementById("name");
+  const phone = document.getElementById("phone");
+  const email = document.getElementById("email");
+  const message = document.getElementById("message");
+
+  if (name.value.trim() === "") {
+    document.getElementById("nameError").textContent = "Name is required";
+    name.classList.add("error");
+    isValid = false;
+  }
+
+  // if (phone.value.trim() === "") {
+  //   document.getElementById("phoneError").textContent = "Phone number is required";
+  //   phone.classList.add("error");
+  //   isValid = false;
+  // }
+
+  if (email.value.trim() === "") {
+    document.getElementById("emailError").textContent = "Email is required";
+    email.classList.add("error");
+    isValid = false;
+  } else if (!/^\S+@\S+\.\S+$/.test(email.value)) {
+    document.getElementById("emailError").textContent = "Enter a valid email address";
+    email.classList.add("error");
+    isValid = false;
+  }
+
+  // if (message.value.trim() === "") {
+  //   document.getElementById("messageError").textContent = "Message cannot be empty";
+  //   message.classList.add("error");
+  //   isValid = false;
+  // }
+
+  if (!isValid) return;
+
+  const payload = {
+    name: name.value.trim(),
+    phone: phone.value.trim(),
+    email: email.value.trim(),
+    message: message.value.trim(),
+    printerModel
+  };
+
+  try {
+    const res = await fetch("/api/send-contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
+      alert("✅ Message sent successfully");
+      this.reset();
+      sessionStorage.removeItem("printerModel");
+    } else {
+      alert("❌ Failed to send message");
+    }
+  } catch (err) {
+    alert("❌ Network error. Please try again.");
+  }
+});
+</script>
+
+<script src="/smartsupp.js"></script>
+</body>
+</html>

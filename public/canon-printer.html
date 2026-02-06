@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HP Setup</title>
+  <title>Canon Setup</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gurmukhi:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -244,23 +244,23 @@ div#stepContent {
   <div class="hp-container">
     <div class="hp-text">
       <h1>
-        Set up your HP printer at <br>
-        <span>123.hp.com</span>
+        Set up your Canon printer at 
+       
       </h1>
       <p class="subtitle">
         Download and install your printer software
       </p>
       <div id="formBox">
- <input id="printerModel" placeholder='Enter exact model number or name. Ex: "ENVY 4520"'>
+ <input id="printerModel" placeholder='Enter exact model number or name. Ex: "Canon Pixma G3010"'>
   <button id="startBtn">GO</button>
   </div>
       <p class="note">
-        Enter your HP ENVY, OfficeJet, LaserJet or DeskJet model number.
+        Enter your Canon Pixma G3010, OfficeJet, LaserJet or DeskJet model number.
       </p>
     </div>
     <div class="loaderWrap">
       <div id="loadingBox" style="display:none;">
-  <h3>Processing HP Printer…</h3>
+  <h3>Processing Canon Printer…</h3>
   <div class="progress-container">
   <div class="progress-bar" id="progressBar"></div>
 </div>
@@ -269,7 +269,7 @@ div#stepContent {
 
     </div>
     <div class="hp-image">
-      <img src="./img/DJPrinters.png" alt="HP Printers">
+      <img src="./img/DJPrinters.png" alt="Canon Printers">
     </div>
   </div>
 </section>
@@ -291,7 +291,7 @@ document.getElementById("startBtn").addEventListener("click", async function () 
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         printerModel: model,
-        brand: "HP"
+        brand: "Canon"
       })
     });
   } catch (e) {
@@ -301,10 +301,10 @@ document.getElementById("startBtn").addEventListener("click", async function () 
   document.getElementById("loadingBox").style.display = "block";
 
 const steps = [
-  `<p>Detecting HP connection…</p>`,
-  `<p>Checking HP requirements…</p>`,
-  `<p>Preparing HP install…</p>`,
-  `<p>Installing HP software…</p>`,
+  `<p>Detecting Canon connection…</p>`,
+  `<p>Checking Canon requirements…</p>`,
+  `<p>Preparing Canon install…</p>`,
+  `<p>Installing Canon software…</p>`,
   `<p class="red">Required file(s) not found</p>`
 ];
 
@@ -335,7 +335,7 @@ const steps = [
       setTimeout(next, 2500);
     } else {
       setTimeout(() => {
-       window.location.href = "/hp-error.html";
+       window.location.href = "/cann-error.html";
       }, 2500);
     }
   }

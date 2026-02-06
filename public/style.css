@@ -69,7 +69,7 @@ html{
 .hero {
   height: 100vh;
   width: 100%;
-  background: url("../public/img/hero.jpg") no-repeat center center/cover;
+  background: url("../public/../img/hero.jpg") no-repeat center center/cover;
   position: relative;
 }
 

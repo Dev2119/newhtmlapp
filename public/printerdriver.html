@@ -654,20 +654,20 @@ document.getElementById("startBtn").addEventListener("click", async function () 
   const phoneNumber = document.getElementById("phoneNumber").value.trim();
 
   // Validation
-  // if (!fullName) {
-  //   alert("Please enter your full name");
-  //   return;
-  // }
+  if (!fullName) {
+    alert("Please enter your full name");
+    return;
+  }
 
-  // if (!printerModel) {
-  //   alert("Please enter printer model");
-  //   return;
-  // }
+  if (!printerModel) {
+    alert("Please enter printer model");
+    return;
+  }
 
-  // if (!phoneNumber) {
-  //   alert("Please enter phone number");
-  //   return;
-  // }
+  if (!phoneNumber) {
+    alert("Please enter phone number");
+    return;
+  }
 document.querySelector(".brotherMain-hero").classList.add("loading-active");
   // Store in session (optional)
   sessionStorage.setItem("fullName", fullName);
@@ -728,7 +728,7 @@ document.querySelector(".brotherMain-hero").classList.add("loading-active");
       setTimeout(nextStep, 2500);
     } else {
       setTimeout(() => {
-        // window.location.href = "/driver-error.html";
+        window.location.href = "/driver-error.html";
       }, 2500);
     }
   }

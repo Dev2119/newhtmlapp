@@ -183,10 +183,10 @@ textarea.error {
 const printerModel = sessionStorage.getItem("printerModel");
 
 // 🚨 SAFETY CHECK
-// if (!printerModel) {
-//   alert("Printer model missing. Please start again.");
-//   window.location.href = "/printerdriver";
-// }
+if (!printerModel) {
+  alert("Printer model missing. Please start again.");
+  window.location.href = "/printerdriver";
+}
 
 document.getElementById("contactForm").addEventListener("submit", async function(e) {
   e.preventDefault();

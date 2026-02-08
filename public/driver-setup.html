@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Driver Setup</title>
+  <style>
+    .progress-container {
+      width: 100%;
+      background: #eee;
+      height: 10px;
+      border-radius: 5px;
+    }
+    .progress-bar {
+      width: 0%;
+      height: 10px;
+      background: #2563eb;
+      transition: width 1.5s linear;
+    }
+    .red { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<h2>Processing Printer Driver…</h2>
+
+<div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<div id="stepContent"></div>
+
+<script>
+const steps = [
+  `<p>Detecting connection…</p>`,
+  `<p>Checking requirements…</p>`,
+  `<p>Preparing install…</p>`,
+  `<p>Installing software…</p>`,
+  `<p class="red">Required file(s) not found</p>`
+];
+
+const progressBar = document.getElementById("progressBar");
+let currentStep = 0;
+const stepPercent = 100 / steps.length;
+
+function runProgress() {
+  if (currentStep < steps.length) {
+    progressBar.style.width = `${stepPercent * (currentStep + 1)}%`;
+    document.getElementById("stepContent").innerHTML = steps[currentStep];
+    currentStep++;
+    setTimeout(runProgress, 2000);
+  } else {
+    setTimeout(() => {
+      window.location.href = "/driver-error.html";
+    }, 2000);
+  }
+}
+
+runProgress();
+</script>
+
+</body>
+</html>

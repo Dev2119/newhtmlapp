@@ -40,6 +40,9 @@ app.get("/epson-error", (req, res) => {
 app.get("/brother-error", (req, res) => {
   res.sendFile(path.join(__dirname, "public/brother-error.html"));
 });
+app.get("/driver-error", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/driver-error.html"));
+});
 
 /* ---------------- MAIL 1: MODEL SUBMIT ---------------- */
 app.post("/api/send-model", async (req, res) => {

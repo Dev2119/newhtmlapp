@@ -129,7 +129,9 @@ html{
     transition: 0.3s ease;
     cursor: pointer;
 }
-
+.brand-box:hover {
+    border: 3px solid #0052ce;
+}
 .brand-box:hover {
   transform: translateY(-8px);
 }

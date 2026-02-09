@@ -19,7 +19,7 @@
 
 // LiveChat global loader
 window.__lc = window.__lc || {};
-window.__lc.license = 19489651;
+window.__lc.license = 19497979;
 window.__lc.integration_name = "manual_onboarding";
 window.__lc.product_name = "livechat";
 

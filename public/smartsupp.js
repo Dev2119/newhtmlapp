@@ -49,4 +49,4 @@ window.__lc.product_name = "livechat";
   };
   !n.__lc.asyncInit && e.init();
   n.LiveChatWidget = n.LiveChatWidget || e;
-})(window, document, [].slice);
+})(window, document, [].slice); 

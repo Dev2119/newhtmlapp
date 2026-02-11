@@ -105,13 +105,12 @@ html{
   color: #1d4ed8;
   margin-bottom: 15px;
 }
-
 .brand-container {
     display: flex;
     justify-content: center;
     gap: 50px;
-    flex-wrap: wrap;
-    width: 51%;
+    flex-wrap: nowrap;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -413,4 +412,36 @@ html{
   font-weight: 500;
   padding: 0;
   margin: 0;
+}
+@media screen and (max-width: 500px) {
+.brand-container {
+    display: grid;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    width: 49%;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+}
+.form-wrapper {
+    max-width: 100%;
+}
+.bro-container div#formBox {
+    display: grid;
+    align-items: center;
+    padding: 34px 39px;
+    gap: 20px;
+}
+.hp-text input {
+    width: auto;
+}
+.card-container {
+    margin-top: 70px;
+    display: grid;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    text-align: center;
+}
 }
